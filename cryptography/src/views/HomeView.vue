@@ -36,7 +36,7 @@
       </div>
       <!-- Display encrypted version (of message)? -->
       <div class="original-text item">
-        <h2>There we are! It's all encrypted and safely on transit...</h2>
+        <h2>There! message all encrypted and safely on transit...</h2>
         <span class="line"></span>
         <p>{{ encryptedMessage }}</p>
       </div>
@@ -50,7 +50,7 @@
       </div>
       <!-- Display decrypted version (of message)? -->
       <div class="original-text item">
-        <h2>...And, your message, safely delivered & readable:)</h2>
+        <h2>...And, your message, safely delivered & decrypted:)</h2>
         <span class="line"></span>
         <p>{{ decryptedMessage }}</p>
       </div>
