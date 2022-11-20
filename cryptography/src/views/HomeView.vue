@@ -12,8 +12,10 @@
       <div class="input item">
         <h2>Type a message</h2>
         <!-- <span class="line"></span> -->
-        <textarea type="text" v-model="sendersMessage"></textarea>
-        <!-- submit by clicking enter / include an actual form -->
+        <form @submit.prevent="handleSubmit">
+          <textarea type="text" v-model="sendersMessage"></textarea>
+          <button>submit</button>
+      </form>
       </div>
       <!-- include key(senders public key) -->
       <div class="key item">
@@ -130,6 +132,10 @@ h2 {
   /* border: 1px solid red; */
 }
 
+.source-message form {
+  display: flex;
+  flex-direction: column
+}
 .source-message textarea {
   background: var(--color-background-soft) ;
   min-height: 80%;
@@ -144,6 +150,20 @@ h2 {
   color: #f2f2f2;
 }
 
+.source-message button {
+  margin-top: 1rem;
+  background: orange;
+  /* color: #f2f2f2; */
+  border: none;
+  border-radius: 10px;
+  padding: .5rem 1rem;
+  justify-self: flex-end;
+  align-self: flex-end;
+} 
+
+.source-message .item:first-of-type {
+  padding-bottom: 1rem;
+}
 .display div:nth-child(3) p,
 .source-message div:nth-child(2) span:last-child,
 .decryption div:nth-child(2) p,
