@@ -13,6 +13,7 @@
         <h2>Type a message</h2>
         <!-- <span class="line"></span> -->
         <textarea type="text" v-model="sendersMessage"></textarea>
+        <!-- submit by clicking enter / include an actual form -->
       </div>
       <!-- include key(senders public key) -->
       <div class="key item">
@@ -73,6 +74,7 @@ export default {
 </script>
 <style scoped>
 .container {
+  max-width: 1280px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -206,5 +208,31 @@ h2 {
 
 .received-message .item:last-of-type {
   border-bottom-left-radius: 0;
+}
+
+@media screen and (max-width: 1240px) {
+  .container {
+    padding-right: 0;
+  }
+  .source-message, .decryption, .received-message {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 1070px) {
+  .received-message .item:first-of-type {
+    /* border-left: none; */
+    border-bottom-left-radius: 0;
+  }
+  .decryption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .received-message {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
 }
 </style>
